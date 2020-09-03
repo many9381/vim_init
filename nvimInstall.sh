@@ -26,4 +26,4 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 
 # nvim PlugInstall
-vim -c ":PlugInstall | q | q"
+vim -c ":PlugInstall | qall"
