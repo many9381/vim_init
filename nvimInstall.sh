@@ -23,3 +23,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 # Install ycmd
 
 # sudo apt install build-essential cmake python3-dev -y
+
+
+# nvim PlugInstall
+vim -c ":PlugInstall | q | q"
