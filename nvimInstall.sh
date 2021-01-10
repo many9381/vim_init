@@ -1,29 +1,37 @@
+#!/bin/bash
 
-# Make Nvim Config directory,
-# Copy init.vim
 
+# Update
+echo "======== Apt Update ========"
+sudo apt update -y
+
+# Install nvim
+echo "======== NeoVIM Install ========"
+sudo apt install neovim python3-neovim build-essential cmake python3-dev -y
+
+# Make nvim Config Directory
+echo "======== Make Config Directory ========"
 mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
-mkdir ${HOME}/.vim
+mkdir -p ${HOME}/.vim
 
-mkdir ~/.config/nvim/
-#touch ~/.config/nvim/init.vim
+mkdir -p ~/.config/nvim/
 
+# Copy to nvim config directory
+echo "======== Copy Config file to Config Directory ========"
 cp ./init.vim ~/.config/nvim/init.vim
 
-
+# Link config file
+echo "======== Add Symbolic Links ========"
 ln -snfv ${HOME}/.vim ${XDG_CONFIG_HOME}/nvim
 touch ${HOME}/.vimrc
 ln -snfv ${HOME}/.vimrc ${XDG_CONFIG_HOME}/nvim/init.vim
 
+
 # Install vim-plug
-
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# Install ycmd
-
-# sudo apt install build-essential cmake python3-dev -y
+echo "======== Install vim-plug ========"
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 
-# nvim PlugInstall
-vim -c ":PlugInstall | qall"
+echo "======== Install nvim plugins ========"
+nvim -c ":PlugInstall | qall"
