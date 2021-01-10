@@ -7,7 +7,7 @@ sudo apt update -y
 
 # Install nvim
 echo "======== NeoVIM Install ========"
-sudo apt install neovim python3-neovim build-essential cmake python3-dev -y
+sudo apt install neovim python3-neovim build-essential cmake python3-dev nodejs -y
 
 # Make nvim Config Directory
 echo "======== Make Config Directory ========"
