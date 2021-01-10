@@ -77,7 +77,6 @@ set nospell
 call plug#begin('~/.config/nvim/plugged')
 
 
-    Plug 'valloric/YouCompleteMe'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'Chiel92/vim-autoformat'
@@ -88,9 +87,10 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'zeis/vim-kolor'
     Plug 'ryanoasis/vim-devicons'
     Plug 'jiangmiao/auto-pairs'
-
+    Plug 'kien/ctrlp.vim'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'mhinz/vim-signify'                " Show a diff 
-    Plug 'scrooloose/syntastic'             " Syntax Checking
+"    Plug 'scrooloose/syntastic'             " Syntax Checking
 call plug#end()
 
 " colorscheme

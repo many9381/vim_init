@@ -22,9 +22,9 @@ cp ./init.vim ~/.config/nvim/init.vim
 
 # Link config file
 echo "======== Add Symbolic Links ========"
-ln -snfv ${HOME}/.vim ${XDG_CONFIG_HOME}/nvim
+ln -snfv ${HOME}/.vim ${XDG_CONFIG_HOME}/nvim ${HOME}/.vim
 touch ${HOME}/.vimrc
-ln -snfv ${HOME}/.vimrc ${XDG_CONFIG_HOME}/nvim/init.vim
+ln -snfv ${XDG_CONFIG_HOME}/nvim/init.vim ${HOME}/.vimrc
 
 
 # Install vim-plug
