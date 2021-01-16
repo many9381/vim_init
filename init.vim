@@ -5,6 +5,7 @@ set textwidth=0         " Hard-wrap long lines as you type them.
 set modeline            " Enable modeline.
 set linespace=0         " Set line-spacing to minimum.
 set nojoinspaces        " Prevents inserting two spaces after punctuation on a join (J)
+
 " More natural splits
 set splitbelow          " Horizontal split below current.
 set splitright          " Vertical split to right of current.
@@ -157,10 +158,6 @@ let g:multi_cursor_next_key='<C-e>'
 let g:multi_cursor_quit_key='<Esc>'
 let g:multi_cursor_quit_key='<Esc>'
 
-" YouCompleteMe
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_min_num_of_chars_for_completion = 1
-
 " Other
 set mouse=
 "set list
@@ -196,7 +193,16 @@ nmap <leader>0 :set invnumber<CR>
 " http://stackoverflow.com/questions/7513380/vim-change-x-function-to-delete-buffer-instead-of-save-quit
 cnoreabbrev <expr> q getcmdtype() == ":" && (getcmdline() == 'q' && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) > 1) ? 'bd' : 'q'
 
+" delays and poor user experience.
+set updatetime=300
+
 
 " save sudo
 "command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 command! -nargs=0 W w !sudo tee % > /dev/null
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
