@@ -39,7 +39,11 @@ set smartindent
 set tabstop=4 shiftwidth=4 expandtab
 set gdefault            " Use 'g' flag by default with :s/foo/bar/.
 set magic               " Use 'magic' patterns (extended regular expressions).
-set nu
+
+" Hybrid line numbers
+set number relativenumber
+set nu rnu
+
 set background=dark
 set history=20
 
@@ -206,3 +210,5 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+packadd termdebug

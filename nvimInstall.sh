@@ -11,7 +11,8 @@ sudo apt install neovim python3-neovim build-essential cmake python3-dev nodejs 
 
 # Make nvim Config Directory
 echo "======== Make Config Directory ========"
-mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
+XDG_CONFIG_HOME=${HOME}/.config
+mkdir -p ${XDG_CONFIG_HOME}
 mkdir -p ${HOME}/.vim
 
 mkdir -p ~/.config/nvim/
@@ -35,3 +36,12 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 echo "======== Install nvim plugins ========"
 nvim -c ":PlugInstall | qall"
+
+echo "======== Install clangd plugins ========"
+sudo apt install clangd-9 -y
+
+echo "======== Install coc-settings ========"
+cp coc-settings.json ~/.config/nvim/
+
+echo "======== Install nvim symbolic link ========"
+sudo ln -sf /usr/bin/nvim /usr/local/bin/nvim
