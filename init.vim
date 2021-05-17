@@ -89,8 +89,10 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tomasr/molokai'
     Plug 'nathanaelkane/vim-indent-guides'
     Plug 'zeis/vim-kolor'
+    Plug 'lilydjwg/colorizer'
     Plug 'ryanoasis/vim-devicons'
     Plug 'jiangmiao/auto-pairs'
+    Plug 'kyazdani42/nvim-web-devicons'
     Plug 'kien/ctrlp.vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'mhinz/vim-signify'                " Show a diff 
@@ -172,10 +174,6 @@ let g:rehash256 = 1
 let g:molokai_original=1
 let NERDTreeIgnore = ['_site']
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
